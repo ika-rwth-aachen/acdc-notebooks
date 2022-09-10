@@ -1,7 +1,7 @@
-[![pipeline status](https://git.rwth-aachen.de/ika/acdc-notebooks/badges/main/pipeline.svg)](https://git.rwth-aachen.de/ika/acdc-notebooks/-/commits/main)
-
-
 ![](assets/header_image.png)
+
+[![Build Main](https://github.com/ika-rwth-aachen/acdc-notebooks/actions/workflows/build.yml/badge.svg)](https://github.com/ika-rwth-aachen/acdc-notebooks/actions/workflows/build.yml)
+
 
 ## Start of the Assignments -> [index.ipynb](index.ipynb)
 
