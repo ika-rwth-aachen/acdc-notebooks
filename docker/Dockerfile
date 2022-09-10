@@ -48,6 +48,12 @@ RUN git clone https://github.com/fzi-forschungszentrum-informatik/Lanelet2 /src 
     catkin config --source-space /src -DPYTHON_EXECUTABLE=/usr/bin/python3 && \
     catkin build
 
+# Install Point Pillars
+RUN git clone -q --recurse-submodules https://github.com/tyagi-iiitv/PointPillars.git /point_pillars && \
+    cd /point_pillars && \
+    git reset --hard ae658d0 && \
+    python setup.py install
+
 USER jovyan
 
 # Install packages via requirements.txt
@@ -55,8 +61,7 @@ ADD requirements.txt .
 RUN pip install -r requirements.txt
 
 # Install Plotly Widget for PCL visualization
-RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager plotlywidget@4.14.3 --dev-build=True
-RUN jupyter labextension install jupyterlab-plotly@4.14.3 --dev-build=True
+RUN jupyter labextension install jupyterlab-plotly
 
 # Install TensorBoard Widget
 RUN pip install git+https://github.com/cliffwoolley/jupyter_tensorboard.git
