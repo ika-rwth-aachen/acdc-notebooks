@@ -1,0 +1,16 @@
+tensorflow-gpu==2.5.0
+tensorflow-addons
+tensorflow-datasets
+matplotlib==3.3.4
+jupyter
+sklearn
+tensorflow_probability==0.13.0
+beeprint
+cmake
+opencv-python
+catkin_pkg
+ipykernel
+virtualenv
+plotly
+pyntcloud
+easydict
