@@ -14,8 +14,8 @@ docker run \
 --interactive \
 --tty \
 --publish 8888:8888 \
---volume "$DIR":/home/jovyan/acdc \
-registry.git.rwth-aachen.de/ika/acdc-notebooks:latest
+--volume ../"$DIR":/home/jovyan/acdc \
+tillbeemelmanns/acdc-notebooks:latest
 
 # Remove write permission of user 1000
 setfacl -R -x u:1000 .

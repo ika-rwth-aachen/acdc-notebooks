@@ -18,6 +18,7 @@ before_script:
 build:
   stage: build
   script:
+  - cd docker
   - docker pull ${CI_REGISTRY_IMAGE}:latest || true
   - docker build --cache-from ${CI_REGISTRY_IMAGE}:latestci
                  --tag ${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_SLUG}
