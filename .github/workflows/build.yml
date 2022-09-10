@@ -36,4 +36,3 @@ jobs:
             tags: ${{ secrets.DOCKER_HUB_USERNAME }}/acdc-notebooks:latest
             cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/acdc-notebooks:buildcache
             cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/acdc-notebooks:buildcache,mode=max
-            platforms: linux/amd64,linux/arm64
