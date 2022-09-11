@@ -22,7 +22,14 @@ tillbeemelmanns/acdc-notebooks:latest \
 /bin/bash -c \
 "cd /home/jovyan/acdc/section_2_sensor_data_processing && 
  time papermill 1_semantic_image_segmentation_solution.ipynb /dev/null &&
- time papermill 2_augmentation_semantic_image_segmentation_solution.ipynb /dev/null"
+ time papermill 2_augmentation_semantic_image_segmentation_solution.ipynb /dev/null &&
+ time papermill 3_semantic_pcl_segmentation_solution.ipynb /dev/null &&
+ time papermill 4_semantic_pcl_segmentation_boosting_solution.ipynb /dev/null &&
+ time papermill 5_object_detection_solution.ipynb /dev/null &&
+ time papermill 6_grid_mapping_solution.ipynb /dev/null &&
+ time papermill 7_cam_semantic_grid_mapping_solution.ipynb /dev/null &&
+ cd /home/jovyan/acdc/section_4_vehicle_guidance && 
+ time papermill 1_route_planning_solution.ipynb /dev/null"
 
 
 # Remove write permission of user 1000
