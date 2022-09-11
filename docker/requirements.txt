@@ -1,4 +1,4 @@
-tensorflow-gpu==2.5.0
+tensorflow-gpu==2.10.0
 tensorflow-addons
 tensorflow-datasets
 matplotlib
