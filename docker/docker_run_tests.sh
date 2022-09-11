@@ -11,6 +11,8 @@ setfacl -R -m u:1000:rwx $MOUNT_DIR
 
 docker run \
 --name='ika-acdc-notebooks-tests' \
+--gpus all \
+--env CUDA_VISIBLE_DEVICES=0 \
 --rm \
 --interactive \
 --tty \
@@ -18,8 +20,9 @@ docker run \
 --volume $MOUNT_DIR:/home/jovyan/acdc \
 tillbeemelmanns/acdc-notebooks:latest \
 /bin/bash -c \
-"papermill /home/jovyan/acdc/section_2_sensor_data_processing/1_semantic_image_segmentation_solution.ipynb /dev/null &&
- papermill /home/jovyan/acdc/section_2_sensor_data_processing/2_augmentation_semantic_image_segmentation_solution.ipynb /dev/null"
+"cd /home/jovyan/acdc/section_2_sensor_data_processing && 
+ time papermill 1_semantic_image_segmentation_solution.ipynb /dev/null &&
+ time papermill 2_augmentation_semantic_image_segmentation_solution.ipynb /dev/null"
 
 
 # Remove write permission of user 1000
