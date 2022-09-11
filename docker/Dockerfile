@@ -42,17 +42,11 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Lanelet2 and build ROS workspace
-RUN git clone https://github.com/fzi-forschungszentrum-informatik/Lanelet2 /src && \
-    cd /src && \
+RUN git clone https://github.com/fzi-forschungszentrum-informatik/Lanelet2 /lanelet2 && \
+    cd /lanelet2 && \
     source /opt/ros/noetic/setup.sh && \
-    catkin config --source-space /src -DPYTHON_EXECUTABLE=/usr/bin/python3 && \
+    catkin config --source-space /lanelet2 -DPYTHON_EXECUTABLE=/usr/bin/python3 && \
     catkin build
-
-# Install Point Pillars
-RUN git clone -q --recurse-submodules https://github.com/tyagi-iiitv/PointPillars.git /point_pillars && \
-    cd /point_pillars && \
-    git reset --hard ae658d0 && \
-    python setup.py install
 
 USER jovyan
 
