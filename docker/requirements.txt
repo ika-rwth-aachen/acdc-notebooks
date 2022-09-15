@@ -16,3 +16,4 @@ pyntcloud
 easydict
 ipympl
 papermill
+jupyterlab-tour
