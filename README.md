@@ -6,6 +6,7 @@
 ## Start of the Assignments: [index.ipynb](index.ipynb)
 
 __Note that the Jupyter Notebooks are sometimes not correctly displayed on Github (Missing Images).__
+
 __Use Juypter Lab to display the notebooks.__
 
 
