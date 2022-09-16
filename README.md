@@ -7,11 +7,11 @@
 
 __Note that the Jupyter Notebooks are sometimes not correctly displayed on Github (Missing Images).__
 
-__Use Juypter Lab to display the notebooks.__
+__Use JuypterLab to display the notebooks.__
 
 
-## Local Usage for editing/developing the notebooks with Docker
-The docker solution can be used for developing and testing the notebooks. You can use the following instructions to run the system:
+## Instruction to start JupyterLab with the Jupyter Notebooks using Docker
+Docker should be used for starting JupyterLab on you local machine. You can use the following instructions to run the system:
 
 You can either build the docker image 
 ```bash
@@ -22,6 +22,7 @@ or pull it from our registry:
 ```bash
 docker pull tillbeemelmanns/acdc-notebooks:latest
 ```
+
 You might need to login to Dockerhub
 
 ```bash
