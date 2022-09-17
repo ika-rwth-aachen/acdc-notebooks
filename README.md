@@ -38,4 +38,4 @@ The docker image should start now and you will get a bunch of output. Then klick
 
 ![](assets/terminal.png)
 
-change to `/acdc/` directory and open index.
+change to `/acdc/` directory and open `index.ipynb` to get an overview over all available notebooks.
