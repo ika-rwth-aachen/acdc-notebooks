@@ -33,3 +33,9 @@ Then run `./docker_run.sh` and open the link in the terminal to open Jupyter Lab
 ```bash
 ./docker_run.sh
 ```
+
+The docker image should start now and you will get a bunch of output. Then klick on the link in the terminal and JupyterLab will open in your browser.
+
+![](assets/terminal.png)
+
+change to `/acdc/` directory and open index.
