@@ -1,5 +1,5 @@
 # Specify parent image. Please select a fixed tag here.
-ARG BASE_IMAGE=tillbeemelmanns/acdc-notebooks:rwth-courses
+ARG BASE_IMAGE=rwthika/acdc-notebooks:rwth-courses
 FROM ${BASE_IMAGE}
 
 # Install cv2

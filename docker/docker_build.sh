@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build --tag tillbeemelmanns/acdc-notebooks:latest .
+docker build --tag rwthika/acdc-notebooks:latest .

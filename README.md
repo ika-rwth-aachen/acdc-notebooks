@@ -20,7 +20,7 @@ You can either build the docker image
 
 or pull it from our registry:
 ```bash
-docker pull tillbeemelmanns/acdc-notebooks:latest
+docker pull rwthika/acdc-notebooks:latest
 ```
 
 You might need to login to Dockerhub

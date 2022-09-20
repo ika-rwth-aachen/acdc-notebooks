@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker push tillbeemelmanns/acdc-notebooks:latest
+docker push rwthika/acdc-notebooks:latest

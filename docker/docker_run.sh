@@ -16,7 +16,7 @@ docker run \
 --tty \
 --publish 8888:8888 \
 --volume $MOUNT_DIR:/home/jovyan/acdc \
-tillbeemelmanns/acdc-notebooks:latest
+rwthika/acdc-notebooks:latest
 
 # Remove write permission of user 1000
 setfacl -R -x u:1000 $MOUNT_DIR
