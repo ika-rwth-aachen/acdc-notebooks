@@ -8,8 +8,7 @@ from config import Parameters
 
 def rotational_nms(set_boxes, confidences, score_threshold=0.7, iou_threshold=0.5):
     """ rotational NMS
-    set_boxes = size NSeqs list of size NDet lists of tuples. each tuple has the form ((pos, pos), (size, size), angle)
-    confidences = size NSeqs list of lists containing NDet floats, i.e. one per detection
+    from PointPillars repository
     """
    
     nms_boxes = []
@@ -24,6 +23,9 @@ def rotational_nms(set_boxes, confidences, score_threshold=0.7, iou_threshold=0.
     return nms_boxes
 
 def transform_labels_into_lidar_coordinates(labels, R, t):
+    """ transform_labels_into_lidar_coordinates
+    from PointPillars repository
+    """
     transformed = []
     for label in labels:
         label.centroid = label.centroid @ np.linalg.inv(R).T - t
