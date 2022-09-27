@@ -21,7 +21,7 @@ docker run \
 rwthika/acdc-notebooks:latest \
 /bin/bash -c \
 "cd /home/jovyan/acdc/section_1_introduction_and_ros &&
- time papermill 2_introduction_to_numpy_solution.ipynb &&
+ time papermill 2_introduction_to_numpy_solution.ipynb /dev/null &&
  cd /home/jovyan/acdc/section_2_sensor_data_processing && 
  time papermill 1_semantic_image_segmentation_solution.ipynb /dev/null &&
  time papermill 2_augmentation_semantic_image_segmentation_solution.ipynb /dev/null &&
