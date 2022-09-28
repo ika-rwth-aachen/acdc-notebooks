@@ -55,7 +55,7 @@ def plot2DBox(ax, box):
     x = [FL[0], FR[0], RR[0], RL[0], FL[0]]
     y = [FL[1], FR[1], RR[1], RL[1], FL[1]]
     z = [FL[2], FR[2], RR[2], RL[2], FL[2]]
-    ax.plot(x, y, z, 'r-')
+    ax.plot(x, y, z, 'b-')
 
 def plot2DLabel(ax, label):
 
