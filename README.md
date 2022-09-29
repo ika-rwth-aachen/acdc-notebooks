@@ -29,9 +29,9 @@ You might need to login to Dockerhub
 docker login
 ```
 
-Then run `./docker_run.sh` and open the link in the terminal to open Jupyter Lab in your browser
+Then run `./run.sh` and open the link in the terminal to open JupyterLab in your browser
 ```bash
-./docker_run.sh
+./run.sh
 ```
 
 The docker image should start now and you will get a bunch of output. Then click on the link in the terminal and JupyterLab will open in your browser.
