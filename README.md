@@ -23,12 +23,6 @@ or pull it from our registry:
 docker pull rwthika/acdc-notebooks:latest
 ```
 
-You might need to login to Dockerhub
-
-```bash
-docker login
-```
-
 Then run `./run.sh` and open the link in the terminal to open JupyterLab in your browser
 ```bash
 ./run.sh
