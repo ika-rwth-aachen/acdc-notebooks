@@ -6,22 +6,6 @@ import matplotlib.pyplot as plt
 
 from config import Parameters
 
-def rotational_nms(set_boxes, confidences, score_threshold=0.7, iou_threshold=0.5):
-    """ rotational NMS
-    from PointPillars repository
-    """
-   
-    nms_boxes = []
-    for boxes, confs in zip(set_boxes, confidences):
-
-        if len(boxes) == 0: 
-            nms_boxes.append([])
-        else:
-            indices = cv.dnn.NMSBoxesRotated(boxes, confs, score_threshold, iou_threshold)
-            indices = indices.reshape(len(indices)).tolist()
-            nms_boxes.append([boxes[i] for i in indices])
-    return nms_boxes
-
 def transform_labels_into_lidar_coordinates(labels, R, t):
     """ transform_labels_into_lidar_coordinates
     from PointPillars repository
