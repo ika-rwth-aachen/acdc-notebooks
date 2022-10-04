@@ -57,6 +57,9 @@ RUN pip install -r requirements.txt
 # Install Plotly Widget for PCL visualization
 RUN jupyter labextension install jupyterlab-plotly
 
+# Install PointPillars Package
+RUN pip install git+https://github.com/ika-rwth-aachen/PointPillars.git
+
 # Install TensorBoard Widget
 RUN pip install git+https://github.com/cliffwoolley/jupyter_tensorboard.git
 RUN pip install git+https://github.com/chaoleili/jupyterlab_tensorboard.git
