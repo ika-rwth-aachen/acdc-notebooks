@@ -65,7 +65,7 @@ def plot2DLabel(ax, label):
     length = label.dimension[0]
     width = label.dimension[1]
     height = label.dimension[2]
-    yaw = label.yaw + math.pi
+    yaw = label.yaw
 
     dx_l = np.cos(yaw) * length / 2
     dy_l = np.sin(yaw) * length / 2
