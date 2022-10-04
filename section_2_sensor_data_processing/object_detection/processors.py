@@ -1,3 +1,7 @@
+### NOTE ###
+# This function is a copy from the open PointPillars repository https://github.com/ika-rwth-aachen/PointPillars (forked from https://github.com/tyagi-iiitv/PointPillars)
+### NOTE ###
+
 from typing import List
 import numpy as np
 import tensorflow as tf

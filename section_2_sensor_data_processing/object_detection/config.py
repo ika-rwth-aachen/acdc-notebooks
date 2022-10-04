@@ -1,3 +1,7 @@
+### NOTE ###
+# This function is a copy from the open PointPillars repository https://github.com/ika-rwth-aachen/PointPillars (forked from https://github.com/tyagi-iiitv/PointPillars)
+### NOTE ###
+
 import numpy as np
 
 
