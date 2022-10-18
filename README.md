@@ -10,7 +10,7 @@ __Note that the Jupyter Notebooks are sometimes not correctly displayed on Githu
 __Use JuypterLab to display the notebooks.__
 
 
-## Instruction to start JupyterLab with the Jupyter Notebooks using Docker
+## Instructions to start JupyterLab with the Jupyter Notebooks using Docker
 Docker should be used for starting JupyterLab on you local machine. You can use the following instructions to run the system:
 
 You can either build the docker image 
@@ -18,18 +18,18 @@ You can either build the docker image
 ./docker_build.sh
 ```
 
-or pull it from our registry:
+or pull it from our registry (recommended):
 ```bash
 docker pull rwthika/acdc-notebooks:latest
 ```
 
-Then run `./run.sh` and open the link in the terminal to open JupyterLab in your browser
+Then navigate to `acdc-notebooks/docker` and run `./run.sh`.
 ```bash
 ./run.sh
 ```
 
-The docker image should start now and you will get a bunch of output. Then click on the link in the terminal and JupyterLab will open in your browser.
+The docker image should start now and your terminal should display some output. Open the last link displayed in the terminal and JupyterLab will open in your browser.
 
 ![](assets/terminal.png)
 
-change to `/acdc/` directory and open `index.ipynb` to get an overview over all available notebooks.
+navigate to the `/acdc/` directory in JupyterLab and open `index.ipynb` to get an overview of all available notebooks.
