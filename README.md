@@ -3,6 +3,9 @@
 [![Build Main](https://github.com/ika-rwth-aachen/acdc-notebooks/actions/workflows/build.yml/badge.svg)](https://github.com/ika-rwth-aachen/acdc-notebooks/actions/workflows/build.yml)
 
 
+This repository belongs to the MOOC [Automated and Connected Driving Challenges (ACDC)](https://www.edx.org/course/automated-and-connected-driving-challenges). It contains Jupyter Notebook programming assignments. Enroll in the MOOC to get access to the solutions.
+
+
 ## Start of the Assignments: [index.ipynb](index.ipynb)
 
 __Note that the Jupyter Notebooks are sometimes not correctly displayed on Github (Missing Images).__
