@@ -38,8 +38,11 @@ RUN apt-get update && \
                        libpugixml-dev \
                        libboost-python-dev \
                        python3-catkin-tools \
+                       python3-catkin-pkg \
+                       python3-rospkg \
                        python3-empy \
     && rm -rf /var/lib/apt/lists/*
+
 
 # Install Lanelet2 and build ROS workspace
 RUN git clone https://github.com/fzi-forschungszentrum-informatik/Lanelet2 /lanelet2 && \
@@ -64,3 +67,7 @@ RUN pip install git+https://github.com/ika-rwth-aachen/PointPillars.git@fix/ika-
 RUN pip install git+https://github.com/cliffwoolley/jupyter_tensorboard.git
 RUN pip install git+https://github.com/chaoleili/jupyterlab_tensorboard.git
 RUN jupyter tensorboard enable --user
+
+RUN pip install jupyter bqplot pyyaml ipywidgets ipycanvas
+RUN pip install jupyros
+RUN pip install roslibpy
