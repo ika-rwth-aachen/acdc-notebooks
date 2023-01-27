@@ -15,6 +15,7 @@ docker run \
 --interactive \
 --tty \
 --publish 8888:8888 \
+--publish 9090:9090 \
 --add-host host.docker.internal:host-gateway \
 --volume $MOUNT_DIR:/home/jovyan/acdc \
 rwthika/acdc-notebooks-jupyros:latest
