@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="rover">
+
+
+
+<link name="base_footprint"/>
+
+<link name="base_link">
+    <inertial>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <mass value="1.0"/>
+        <inertia ixx="0.4" ixy="0.0" ixz="0.0"
+                 iyy="0.4" iyz="0.0"
+                 izz="0.2"/>
+    </inertial>
+    <visual name="">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <box size="0.8 0.7 0.1"/>
+        </geometry>
+        <material name="">
+            <color rgba="1.0 0.0 0.0 1.0"/>
+            <texture filename=""/>
+        </material>
+    </visual>
+    <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <box size="0.0 0.0 0.0"/>
+        </geometry>
+    </collision>
+</link>
+
+<joint name="base_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.135" rpy="0.0 0.0 0.0"/>
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <axis xyz="0.0 0.0 0.0"/>
+</joint>
+
+<!-- All Wheel links and joints -->
+
+
+<xacro:macro name="wheel" params="name x y">
+
+    <link name="wheel_${name}_link">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.5"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://mobile_robot/meshes/left_tire.stl" scale="0.005 0.005 0.005"/>
+            </geometry>
+            <material name="black">
+                <color rgba=".0 .0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://mobile_robot/meshes/left_tire.stl" scale="0.005 0.005 0.005"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="wheel_${name}_joint" type="continuous">
+        <origin xyz="${x} ${y} .0" rpy="0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="wheel_${name}_link"/>
+        <axis xyz=".0 .0 1.0"/>
+    </joint>
+
+</xacro:macro>
+
+
+<!-- Wheel Creating using macros -->
+<xacro:wheel name="rear_right"  x="0.250" y =" 0.40"/>
+<xacro:wheel name="front_right" x="-0.250" y =" 0.40"/>
+<xacro:wheel name="front_left"  x="-0.250" y =" -0.40"/>
+<xacro:wheel name="rear_left"   x="0.250" y =" -0.40"/>
+
+
+
+
+</robot>

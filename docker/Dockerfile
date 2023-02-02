@@ -103,6 +103,9 @@ RUN pip install jupyterlab-zethus
 RUN jupyter nbextension install --py --symlink --sys-prefix jupyros
 RUN jupyter nbextension enable --py --sys-prefix jupyros
 RUN jupyter nbextension enable --py --sys-prefix widgetsnbextension
+#RUN jupyter labextension install @voila-dashboards/jupyterlab-preview
+RUN jupyter serverextension enable voila
+RUN jupyter server extension enable voila
 #RUN jupyter labextension install jupyterlab-ros
 #RUN pip install jupyterlab-ros
 #RUN git clone https://github.com/RoboStack/jupyterlab-ros.git && \
