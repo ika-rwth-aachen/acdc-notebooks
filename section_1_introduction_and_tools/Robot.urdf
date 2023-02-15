@@ -8,7 +8,7 @@
             <geometry>
                 <box size="0.3 0.3 0.15"/>
             </geometry>
-            <material name="white"/>
+            <material name="black"/>
         </visual>
         <collision>
             <origin xyz="0.15 0 0.075" rpy="0 0 0"/>
@@ -44,7 +44,7 @@
                 <cylinder length="0.04" radius="0.05" />/>
             </geometry>
         </collision>
-     </link>
+    </link>
     
      <!-- RIGHT WHEEL -->
 
@@ -70,29 +70,28 @@
         </collision>
      </link>
     
-    <!-- CASTER WHEEL -->
+    <!-- SPHERE WHEEL -->
 
-    <joint name="caster_wheel_joint" type="fixed">
+    <joint name="sphere_wheel_joint" type="fixed">
         <parent link="chassis"/>
-        <child link="caster_wheel"/>
+        <child link="sphere_wheel"/>
         <origin xyz="0.24 0 0" rpy="0 0 0"/>
     </joint>
 
-    <link name="caster_wheel">
+    <link name="sphere_wheel">
         <visual>
             <geometry>
                 <sphere radius="0.05" />
             </geometry>
             <material name="black"/>
-       </visual>
+        </visual>
         <collision>
             <geometry>
                 <sphere radius="0.05" />
             </geometry>
             <material name="black"/>
-       </collision>
-     </link>
-    
+        </collision>
+    </link>
     <!-- Lidar link -->
     
     <link name="lidar_link">   
