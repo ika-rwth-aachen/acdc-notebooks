@@ -58,7 +58,7 @@ RUN pip install -r requirements.txt
 RUN jupyter labextension install jupyterlab-plotly
 
 # Install PointPillars Package
-RUN pip install git+https://github.com/ika-rwth-aachen/PointPillars.git@fix/ika-changes
+RUN pip install git+https://github.com/ika-rwth-aachen/PointPillars.git
 
 # Install TensorBoard Widget
 RUN pip install git+https://github.com/cliffwoolley/jupyter_tensorboard.git
