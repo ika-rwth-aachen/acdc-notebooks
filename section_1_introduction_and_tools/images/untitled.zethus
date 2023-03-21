@@ -1,0 +1,59 @@
+{
+    "panels": {
+        "sidebar": {
+            "display": true,
+            "collapsed": false
+        },
+        "header": {
+            "display": true
+        },
+        "info": {
+            "display": true,
+            "collapsed": true
+        }
+    },
+    "ros": {
+        "endpoint": "ws://localhost:9090/ros/bridge",
+        "pkgsEndpoint": "ws://localhost:9090/ros/pkgs"
+    },
+    "infoTabs": [],
+    "visualizations": [
+        {
+            "vizType": "Image",
+            "topicName": "/image_stream",
+            "messageType": "sensor_msgs/Image",
+            "name": "Image",
+            "visible": true,
+            "key": "CLD87jjYW"
+        }
+    ],
+    "globalOptions": {
+        "display": true,
+        "backgroundColor": {
+            "display": true,
+            "value": 15790320
+        },
+        "fixedFrame": {
+            "display": true,
+            "value": "world"
+        },
+        "grid": {
+            "display": true,
+            "size": 30,
+            "divisions": 30,
+            "color": 11184810,
+            "centerlineColor": 7368816
+        }
+    },
+    "tools": {
+        "mode": "controls",
+        "controls": {
+            "display": false,
+            "enabled": true
+        },
+        "measure": {
+            "display": false
+        },
+        "custom": []
+    }
+}

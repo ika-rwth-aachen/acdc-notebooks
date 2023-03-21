@@ -17,3 +17,5 @@ easydict
 ipympl
 papermill
 jupyterlab-tour
+nodejs
+jupyterlab
