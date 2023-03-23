@@ -76,7 +76,6 @@ RUN pip install -r requirements.txt
 # Install Plotly Widget for PCL visualization
 RUN jupyter labextension install jupyterlab-plotly
 
-
 # Install PointPillars Package
 RUN pip install git+https://github.com/ika-rwth-aachen/PointPillars.git
 
@@ -86,7 +85,6 @@ RUN pip install git+https://github.com/chaoleili/jupyterlab_tensorboard.git
 RUN jupyter tensorboard enable --user
 
 # Install Jupyros
-RUN pip install viola
 RUN pip install service_identity --force --upgrade
 RUN pip install jupyter bqplot pyyaml ipywidgets ipycanvas
 RUN pip install jupyros
@@ -103,21 +101,6 @@ RUN pip install jupyterlab-zethus
 RUN jupyter nbextension install --py --symlink --sys-prefix jupyros
 RUN jupyter nbextension enable --py --sys-prefix jupyros
 RUN jupyter nbextension enable --py --sys-prefix widgetsnbextension
-#RUN jupyter labextension install @voila-dashboards/jupyterlab-preview
-RUN jupyter serverextension enable voila
-RUN jupyter server extension enable voila
-#RUN jupyter labextension install jupyterlab-ros
-#RUN pip install jupyterlab-ros
-#RUN git clone https://github.com/RoboStack/jupyterlab-ros.git && \
-# Move to jupyterlab-ros directory
- #   cd jupyterlab-ros && \y
-    #rosdep install jupyterlab-ros && \
-# Install server extension in editable mode
-#    python -m pip install -e . && \
-# Link your development version of the extension with JupyterLab
-#    jupyter-labextension develop . --overwrite
-#RUN pip install jupyter_ros_server==0.1.0
-#RUN pip install jrosbridge
-#RUN pip install roslibjs
+
 
 

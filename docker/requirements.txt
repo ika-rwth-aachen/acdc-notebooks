@@ -3,7 +3,7 @@ tensorflow-addons
 tensorflow-datasets
 matplotlib
 jupyter
-sklearn
+scikit-learn
 tensorflow_probability==0.13.0
 beeprint
 cmake
