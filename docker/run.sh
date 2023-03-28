@@ -18,7 +18,7 @@ docker run \
 --publish 9090:9090 \
 --add-host host.docker.internal:host-gateway \
 --volume $MOUNT_DIR:/home/jovyan/acdc \
-rwthika/acdc-notebooks-jupyros:latest
+rwthika/acdc-notebooks:latest
 
 # Remove write permission of user 1000
 setfacl -R -x u:1000 $MOUNT_DIR

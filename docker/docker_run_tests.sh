@@ -18,7 +18,7 @@ docker run \
 --tty \
 --publish 8888:8888 \
 --volume $MOUNT_DIR:/home/jovyan/acdc \
-rwthika/acdc-notebooks-jupyros:latest \
+rwthika/acdc-notebooks:latest \
 /bin/bash -c \
 "cd /home/jovyan/acdc/section_1_introduction_and_ros &&
  time papermill 2_introduction_to_numpy_solution.ipynb /dev/null &&
