@@ -52,3 +52,11 @@ All programming tasks can be run inside of a Docker container, which we provide.
     ![](assets/terminal.png)
 
 4. Navigate to the `/acdc/` directory in JupyterLab and open `index.ipynb` to get an overview of all available notebooks.
+
+
+
+# License
+
+MIT License
+
+Copyright 2023 Institute for Automotive Engineering of RWTH Aachen University.
