@@ -18,3 +18,5 @@ papermill
 jupyterlab-tour
 nodejs
 jupyterlab
+rosbags
+squaternion
