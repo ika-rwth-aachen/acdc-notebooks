@@ -1,6 +1,7 @@
 venv
 my_venv
 __pycache__
+.db3
 .ipynb_checkpoints
 .idea
 section_2_sensor_data_processing/tensorflow_datasets
