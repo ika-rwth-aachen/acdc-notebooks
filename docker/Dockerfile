@@ -1,4 +1,4 @@
-FROM jupyter/minimal-notebook:lab-3.1.4
+FROM jupyter/minimal-notebook:lab-3.1.18
 
 USER root
 
@@ -35,25 +35,35 @@ USER ${NB_USER}
 RUN pip install \
 	'jupyterlab_iframe==0.4.0' \
 	'git+https://github.com/stv0g/nbgitpuller@f735265f7b2a429a17a8fab70cfd3557f060640d' \
-	'rwth-nb==0.1.8'
+	'rwth-nb==0.1.8' \
+	'tqdm'
 
 RUN conda install --name base --no-update-deps \
 		'conda==4.10.3' && \
 	conda install --name base --quiet --yes --no-update-deps \
 		'jupyterlab-git==0.32.1' \
 		'ujson==4.0.2' \
-		'ipywidgets==7.6.3' \
-		'ipympl==0.7.0' \
+		'ipympl==0.9.3' \
 		'matplotlib-base==3.4.3' && \
 	conda clean --all
 
 
 RUN conda install --name base --quiet --yes --no-update-deps \
-		'jupyterlab_widgets' \
 		'jupyterlab-drawio==0.9.0' \
 		'jupyterlab_iframe==0.4.0' \
-		'jupyterlab_latex=3.0.0' && \
+		'jupyterlab_latex=3.0.0' \
+		'jupyter_core==4.11.2' && \
 	conda clean --all
+
+RUN conda install --name base --quiet --yes --no-update-deps --channel conda-forge \
+                'jupyterlab_widgets' \
+		'jupyterhub=1.1.0' \
+		'ipywidgets' && \
+        conda clean --all
+
+# Fix traitlets pip package
+RUN pip uninstall -y traitlets
+RUN pip install traitlets==5.9.0
 
 # Workaround LaTex
 RUN git clone https://github.com/joequant/jupyterlab-latex /tmp/jupyterlab-latex && cd /tmp/jupyterlab-latex && git checkout cbb66825786ecf11a35fd92df797f8ccee719ad4 && pip install -ve .
@@ -152,9 +162,9 @@ USER jovyan
 ARG TARGETPLATFORM
 
 RUN if [ "$TARGETPLATFORM" = "linux/amd64" ]; then \
-    pip install tensorflow-gpu==2.10.0 ; \
+    pip install tensorflow==2.10.0 ; \
     elif [ "$TARGETPLATFORM" = "linux/arm64" ] ; then \
-    python -m pip install tensorflow-macos ; \
+    pip install tensorflow==2.10.0 ; \
     fi
 
 # Install packages via requirements.txt
@@ -167,15 +177,9 @@ RUN jupyter labextension install jupyterlab-plotly
 # Install PointPillars Package
 RUN pip install git+https://github.com/ika-rwth-aachen/PointPillars.git
 
-# Install TensorBoard Widget
-RUN pip install git+https://github.com/cliffwoolley/jupyter_tensorboard.git
-RUN pip install git+https://github.com/chaoleili/jupyterlab_tensorboard.git
-RUN jupyter tensorboard enable --user
-
 # Install Jupyros
-RUN pip install service_identity --force --upgrade
-RUN pip install jupyter bqplot pyyaml ipywidgets ipycanvas
-RUN pip install jupyros
+RUN conda install jupyter bqplot pyyaml ipywidgets ipycanvas
+RUN pip install jupyros==0.7.0a0
 RUN pip install roslibpy
 RUN pip install pyrosbag
 
@@ -183,9 +187,8 @@ RUN pip install pyrosbag
 RUN pip install pyOpenSSL --upgrade
 RUN pip install pymongo 
 
-RUN pip install jupyterlab-urdf
+RUN pip install jupyterlab-urdf==0.2.1
 RUN pip install jupyterlab-zethus
 
-RUN jupyter nbextension install --py --symlink --sys-prefix jupyros
-RUN jupyter nbextension enable --py --sys-prefix jupyros
-RUN jupyter nbextension enable --py --sys-prefix widgetsnbextension
+ENV ROS_HOSTNAME=localhost
+ENV ROS_MASTER_URI=http://localhost:11311

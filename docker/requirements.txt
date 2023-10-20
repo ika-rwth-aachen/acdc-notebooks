@@ -1,9 +1,8 @@
-tensorflow-addons
-tensorflow-datasets
+tensorflow-datasets==4.9.2
 matplotlib
 jupyter
 scikit-learn
-tensorflow_probability==0.13.0
+tensorflow_probability==0.18.0
 beeprint
 cmake
 opencv-python
