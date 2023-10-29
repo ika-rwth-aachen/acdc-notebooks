@@ -19,3 +19,4 @@ nodejs
 jupyterlab
 rosbags
 squaternion
+netifaces
