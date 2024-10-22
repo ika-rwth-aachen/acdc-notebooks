@@ -59,4 +59,4 @@ All programming tasks can be run inside of a Docker container, which we provide.
 
 MIT License
 
-Copyright 2023 Institute for Automotive Engineering of RWTH Aachen University.
+Copyright 2024 Institute for Automotive Engineering of RWTH Aachen University.
