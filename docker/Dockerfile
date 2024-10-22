@@ -141,6 +141,7 @@ RUN apt-get update && \
                        libgeographic-dev \
                        libpugixml-dev \
                        libboost-python-dev \
+                       libpython3-dev \
                        python3-catkin-tools \
                        python3-catkin-pkg \
                        python3-rospkg \
@@ -154,7 +155,7 @@ RUN apt-get update && \
 RUN git clone https://github.com/fzi-forschungszentrum-informatik/Lanelet2 /lanelet2 && \
     cd /lanelet2 && \
     source /opt/ros/noetic/setup.sh && \
-    catkin config --source-space /lanelet2 -DPYTHON_EXECUTABLE=/usr/bin/python3 && \
+    catkin config --source-space /lanelet2 -DPYTHON_EXECUTABLE=/usr/bin/python3 --cmake-args -DCMAKE_BUILD_TYPE=RelWithDebInfo -DPYTHON_VERSION=3.8 && \
     catkin build
 
 USER jovyan
@@ -172,7 +173,7 @@ ADD requirements.txt .
 RUN pip install -r requirements.txt
 
 # Install Plotly Widget for PCL visualization
-RUN jupyter labextension install jupyterlab-plotly
+RUN pip install plotly
 
 # Install PointPillars Package
 RUN pip install git+https://github.com/ika-rwth-aachen/PointPillars.git
@@ -189,6 +190,7 @@ RUN pip install pymongo
 
 RUN pip install jupyterlab-urdf==0.2.1
 RUN pip install jupyterlab-zethus
+RUN pip install numpy==1.25.2
 
 ENV ROS_HOSTNAME=localhost
 ENV ROS_MASTER_URI=http://localhost:11311
